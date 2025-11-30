@@ -10,7 +10,7 @@
               <div class="card-body">
                 <div class="text-center">
                   <img src="{{ asset('assets/image/logo.png') }}" class="logo-icon" alt="logo icon">
-                  <h3 class="" style="color: #FFF;">Welcome to Ved Kalp Investment</h3>
+                  <h3 class="" style="color: #FFF;">Welcome to Home page</h3>
                 </div>
                 @if (session('error'))
                   <div class="alert alert-danger">
