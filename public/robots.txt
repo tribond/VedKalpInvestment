@@ -1,0 +1,14 @@
+# Allow all search engines to crawl everything
+User-agent: *
+Disallow:
+
+# Block a specific search engine from a directory
+# User-agent: Googlebot
+# Disallow: /private-directory/
+
+# Allow all bots to crawl everything except a specific folder
+# User-agent: *
+# Disallow: /restricted-folder/
+
+# Specify the location of the sitemap
+# Sitemap: https://www.yourwebsite.com/sitemap.xml
