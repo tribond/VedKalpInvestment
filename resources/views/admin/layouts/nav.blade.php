@@ -23,7 +23,7 @@
             </a>
         </li>
         <li>
-            <a href="{{url('admin/userhistory/list')}}">
+            <a href="{{route('userlist')}}">
                 <div class="parent-icon"><i class="fa fa-user" aria-hidden="true"></i>
                 </div>
                 <div class="menu-title">User Management</div>

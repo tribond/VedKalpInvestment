@@ -31,7 +31,7 @@ a {
 	top: 0;
 	bottom: 0;
 	left: 0;
-	background: #262d34;
+	background: #1d1d1d;
 	border-right: 0 solid #e4e4e4;
 	z-index: 11;
 	box-shadow: 0 2px 6px 0 rgb(218 218 253 / 65%), 0 2px 6px 0 rgb(206 206 238 / 54%)!important;
@@ -48,13 +48,13 @@ a {
 	bottom: 0;
 	padding: 0 15px;
 	z-index: 5;
-	background: #262d34;
+	background: #1d1d1d;
 	background-clip: padding-box;
 	/* border-bottom: 1px solid #e4e4e4; */
 }
 
     .logo-icon {
-	width: 120px
+	width: 200px
 }
 
 .logo-text {
@@ -145,7 +145,7 @@ a {
 	-webkit-box-direction: normal;
 	-ms-flex-direction: column;
 	flex-direction: column;
-	background-color: #262d34;
+	background-color: #1d1d1d;
 }
 
 .sidebar-wrapper .metismenu li+li {
