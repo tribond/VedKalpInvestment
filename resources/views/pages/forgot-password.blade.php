@@ -16,7 +16,7 @@
             background: rgb(0 0 0 / 20%);
         }
 
-       
+
     </style>
 @stop
 @section('content')
@@ -24,7 +24,7 @@
         <div class="row w-100">
             <div class="col-12 logo-section">
                 <a href="{{ url('/') }}">
-                    <img src="{{ asset('assets/image/logo.png') }}" alt="Urban Mantras" class="lrf-logo">
+                    <img src="{{ asset('assets/image/logo.jpg') }}" alt="Urban Mantras" class="lrf-logo">
                 </a>
             </div>
             <div class="col-md-6 d-flex justify-content-center align-items-center">

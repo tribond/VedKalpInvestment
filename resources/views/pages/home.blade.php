@@ -9,7 +9,7 @@
             <div class="card" style="background-color:#000000c4 !important;">
               <div class="card-body">
                 <div class="text-center">
-                  <img src="{{ asset('assets/image/logo.png') }}" class="logo-icon" alt="logo icon">
+                  <img src="{{ asset('assets/image/logo.jpg') }}" class="logo-icon" alt="logo icon">
                   <h3 class="" style="color: #FFF;">Welcome to Home page</h3>
                 </div>
                 @if (session('error'))

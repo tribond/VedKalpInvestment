@@ -9,7 +9,7 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-footer-widget">
                         <div class="footer-logo mb-30">
-                            <a href="#"><img src="{{ asset('assets/image/logo.png') }}" alt=""></a>
+                            <a href="#"><img src="{{ asset('assets/image/logo.jpg') }}" alt=""></a>
                         </div>
                         <p>Lorem ipsum dolor sit samet, consectetur adipiscing elit. India situs atione mantor</p>
                         <div class="social-info">

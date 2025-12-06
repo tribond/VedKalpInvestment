@@ -2,14 +2,14 @@
 <div class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
         <div>
-            <img src="{{ asset('assets/image/logo.png') }}" class="logo-icon" alt="logo icon">
+            <img src="{{ asset('assets/image/logo.jpg') }}" class="logo-icon" alt="logo icon">
         </div>
         <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
         </div>
     </div>
     <div class="sidebar-header">
         <div>
-            <img src="{{ asset('assets/image/logo.png') }}" class="logo-icon" alt="logo icon">
+            <img src="{{ asset('assets/image/logo.jpg') }}" class="logo-icon" alt="logo icon">
         </div>
 
     </div>
