@@ -17,6 +17,7 @@
             height: 100vh;
             overflow: hidden;
             color: #fff;
+            background: #000 !important;
         }
 
         .left-section {
@@ -24,6 +25,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            border-radius: 0 100px 100px 0;
         }
 
         .logo-img {
@@ -38,8 +40,8 @@
         }
 
         .col-md-6.d-flex {
-            background: linear-gradient(135deg, #161616, #000000);
-            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.4);
+            background: #000000;
+            
         }
 
         h3 {
@@ -113,8 +115,8 @@
         <div class="row g-0 h-100">
 
             <!-- Left Section (Logo) -->
-            <div class="col-md-6 left-section">
-                <img src="{{ asset('assets/image/logo.jpg') }}" class="logo-img" alt="Logo">
+            <div class="col-md-6 left-section bg-white">
+                <img src="{{ asset('assets/img/logo.webp') }}" class="logo-img" alt="Logo">
             </div>
 
             <!-- Right Section (Login Form) -->

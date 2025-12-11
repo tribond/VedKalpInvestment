@@ -5,9 +5,11 @@
     @yield('style')
 </head>
     <body>
-        <div class="page-main">
+        @include('includes.header')
+        <main class="main">
             @yield('content')
-        </div>
+        </main>
+        @include('includes.footer')
         @include('includes.page-scripts')
         @yield('script')
     </body>

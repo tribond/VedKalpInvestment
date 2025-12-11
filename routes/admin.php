@@ -20,15 +20,10 @@ use App\Http\Controllers\Admin\{
 |
 */
 
-Route::get('/clear-optimization', function () {
-    Artisan::call('optimize:clear');
-    return 'Optimization cache cleared.';
-});
-
 Route::get('/', [AdminController::class, 'index'])->name('login');
 Route::get('/login', [AdminController::class, 'index'])->name('login');
 
-Route::get('/checklogin', [AdminController::class, 'login'])->name('checklogin');
+Route::post('/checklogin', [AdminController::class, 'login'])->name('checklogin');
 Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
 
 

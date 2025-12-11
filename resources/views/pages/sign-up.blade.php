@@ -1,75 +1,77 @@
 @extends('layouts.default')
 @section('content')
-<div class="wrapper bg-login">
-    <div class="section-authentication-signin d-flex align-items-center justify-content-center my-5 my-lg-0">
-        <div class="container-fluid">
-            <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
-                <div class="col mx-auto">
-                    <div class="card" style="background-color:#1b0f1b !important;">
-                        <div class="card-body">
-                            <div class="p-4 rounded">
-                                <div class="text-center">
-                                    <h3 class="" style="color: #FFF;">Register</h3>
-                                </div>
-                                @if (session('error'))
-                                    <div class="alert alert-danger">
-                                        {{ session('error') }}
-                                    </div>
-                                @endif
-                                <div class="form-body">
-                                    <form class="row g-2" id="lrf-form" action="#" method="post">
-                                        @csrf
-                                        <div class="form-group">
-                                            <label for="name" class="form-label" style="color:#FFF">Name</label>
-                                            <input type="text" id="name" name="name" class="form-control" placeholder="Enter Your Name">
-                                            <label class="error-message"></label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="email" class="form-label" style="color:#FFF">Email</label>
-                                            <input type="text" id="email" name="email" class="form-control" placeholder="Enter Your Email">
-                                            <label class="error-message"></label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="password" class="form-label" style="color:#FFF">Password</label>
-                                            <input type="password" id="password" name="password" class="form-control" placeholder="Enter Your Password">
-                                            <label class="error-message"></label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="confirmPassword" class="form-label" style="color:#FFF">Confirm Password</label>
-                                            <input type="password" id="confirmPassword" name="confirm_password" class="form-control" placeholder="Confirm Your Password">
-                                            <label class="error-message"></label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="contact" class="form-label" style="color:#FFF">Mobile Number</label>
-                                            <input type="text" id="contact" name="mobile_number" class="form-control" placeholder="Enter Your Contact Number">
-                                            <label class="error-message"></label>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="d-grid">
-                                                <button type="submit" class="btn submit-button"><i class="bx bxs-lock-open"></i>Sign Up</button>
+    <section id="contact" class="p-1 contact section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Register</h2>
+            <p>
+                <span>Already have an account ?</span> <a href="{{ route('signIn') }}" class="font-weight-bold">Login</a>
+            </p>
+        </div>
+        <!-- End Section Title -->
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="row align-items-stretch">
+                <div class="col-lg-12" data-aos="fade-right" data-aos-delay="200">
+                    <div class="contact-form-container">
+
+                        <form action="{{ route('signUpSubmit') }}" method="post" class="contact-form" autocomplete="off">
+                            <div class="row justify-content-center">
+                                <div class="col-9">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-field">
+                                                <input type="text" name="name" class="form-input" id="userName" placeholder="Your Name" required="">
+                                                <label for="userName" class="field-label">Name</label>
                                             </div>
                                         </div>
-                                    </form>
+
+                                        <div class="col-md-6">
+                                            <div class="form-field">
+                                                <input type="email" class="form-input" name="email" id="userEmail" placeholder="Your Email" required="">
+                                                <label for="userEmail" class="field-label">Email</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-field">
+                                                <input type="password" name="password" class="form-input" id="userPassword" placeholder="Your Password" required="">
+                                                <label for="userPassword" class="field-label">Password</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-field">
+                                                <input type="password" class="form-input" name="confirm_password" id="userConfirmPassword" placeholder="Confirm Password" required="">
+                                                <label for="userConfirmPassword" class="field-label">Confirm Password</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-field">
+                                                <input type="tel" class="form-input" name="phone" id="userPhone" placeholder="Your Phone">
+                                                <label for="userPhone" class="field-label">Phone</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="send-button">
+                                        Register
+                                        <span class="button-arrow">→</span>
+                                    </button>
                                 </div>
-                            </div>
-                            <div class="mt-2 text-center font-weight-bold" style="color:#FFF">
-                                <span>Already have an account ?</span> <a href="{{ url('/') }}" class="font-weight-bold">Sign In</a>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
+
             </div>
         </div>
-    </div>
-</div>
+    </section>
 
-<style>
-    .submit-button {
-        color: #fff;
-        background-color: #003E77;
-        border-color: #003E77;
-    }
-</style>
+
 @stop
 
 @section('script')
