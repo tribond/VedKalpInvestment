@@ -9,8 +9,11 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use App\Models\SmartApiUser;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
 {
@@ -53,23 +56,22 @@ class HomeController extends Controller
 
     public function signInSubmit(Request $request)
     {
-        $parameters = [
-            'email' => $request->email,
-            'password' => $request->password
-        ];
-        $response = ApiService::signIn($parameters);
-        if (!empty($response) && isset($response['status']) && $response['status'] == true) {
-            Session::put('auth_token', $response['data']['token']);
-            Auth::loginUsingId($response['data']['user']['id']);
-            $angelOneUser = AngeloneApiService::getUserProfile();
-            Log::info("angelOneUser", [$angelOneUser]);
-            if (isset($angelOneUser['status']) && $angelOneUser['status'] == true) {
-                Session::put('angel_token_alive', true);
-            } else {
-                Session::put('angel_token_alive', false);
-            }
+         $request->validate([
+            'email' => 'required|string|email',
+            'password' => 'required|string',
+        ]);
+
+        if (!Auth::attempt($request->only('email', 'password'))) {
+            return response()->json(['message' => 'Invalid credentials'], 401);
         }
-        return $response;
+
+        $user = Auth::user();
+        $token = $user->createToken('web_token')->plainTextToken;
+        Session::put('auth_token', $token);
+        Auth::loginUsingId($user->id);
+
+        $userAllData = ["user" => $user, "token" => $token];
+        return response()->json(['status' => true, 'message' => "Login successfully.", 'data' => $userAllData]);
     }
 
     public function signUp()
@@ -79,9 +81,31 @@ class HomeController extends Controller
 
     public function signUpSubmit(Request $request)
     {
-        $parameters = $request->all();
-        $response = ApiService::signUp($parameters);
-        return $response;
+        $validateRequest = Validator::make($request->all(), [
+            "name" => "required",
+            'email' => 'unique:users,email|max:64',
+            "password" => "required|max:20|min:8",
+            "confirm_password" => "required_with:password|same:password|max:20|min:8",
+            "mobile_number" => "nullable|max:15"
+        ]);
+
+        if ($validateRequest->fails()) {
+            $message = $validateRequest->errors();
+            if (!empty($message)) {
+                return response()->json(["status" => false, "message" => $message]);
+            }
+        }
+
+        $data = array();
+        $data['name'] = $request->name;
+        $data['email'] = $request->email;
+        $data['password'] = Hash::make($request->password);
+        $data['mobile_number'] = $request->mobile_number;
+        $data['user_type_id'] = 1;
+        $data['is_active'] = 1;
+
+        $userAllData = User::create($data);
+        return response()->json(["status" => true, "message" => "Signup successfully", "data" => $userAllData]);
     }
 
     public function dashboard()

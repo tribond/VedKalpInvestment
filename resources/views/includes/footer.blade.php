@@ -81,3 +81,11 @@
     <div></div>
     <div></div>
   </div>
+
+  <!-- Ajax loader -->
+  <div id="ajaxloader" style="display: none;">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>

@@ -14,7 +14,8 @@
                 <div class="col-lg-12" data-aos="fade-right" data-aos-delay="200">
                     <div class="contact-form-container">
 
-                        <form action="{{ route('signUpSubmit') }}" method="post" class="contact-form" autocomplete="off">
+                        <form action="{{ route('signUpSubmit') }}" method="post" id="lrf-form" class="contact-form" autocomplete="off">
+                            @csrf
                             <div class="row justify-content-center">
                                 <div class="col-6">
                                     <div class="col-12">
@@ -53,7 +54,5 @@
         var signInUrl = "{{ route('signInSubmit') }}";
         var dashboardUrl = "{{ route('dashboard') }}";
     </script>
-    <script src="{{ asset('assets/js/form-validate/jquery.validate.min.js') }}"></script>
-    <script src="{{ asset('assets/js/form-validate/additional-methods.min.js') }}"></script>
     <script src="{{ asset('assets/js/sign-in/index.js') }}"></script>
 @endsection
