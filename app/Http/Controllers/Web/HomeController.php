@@ -4,12 +4,15 @@ namespace App\Http\Controllers\Web;
 
 use App\Helpers\AngeloneApiService;
 use App\Helpers\ApiService;
+use App\Models\ContactUs;
+use App\Models\GeneralSettings;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use App\Models\SmartApiUser;
 use App\Models\User;
+use App\Services\NotificationService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
@@ -56,7 +59,7 @@ class HomeController extends Controller
 
     public function signInSubmit(Request $request)
     {
-         $request->validate([
+        $request->validate([
             'email' => 'required|string|email',
             'password' => 'required|string',
         ]);
@@ -65,13 +68,7 @@ class HomeController extends Controller
             return response()->json(['message' => 'Invalid credentials'], 401);
         }
 
-        $user = Auth::user();
-        $token = $user->createToken('web_token')->plainTextToken;
-        Session::put('auth_token', $token);
-        Auth::loginUsingId($user->id);
-
-        $userAllData = ["user" => $user, "token" => $token];
-        return response()->json(['status' => true, 'message' => "Login successfully.", 'data' => $userAllData]);
+        return response()->json(['status' => true, 'message' => "Login successfully."]);
     }
 
     public function signUp()
@@ -111,6 +108,36 @@ class HomeController extends Controller
     public function dashboard()
     {
         return view('pages.dashboard');
+    }
+
+    public function contactusSubmit(Request $request)
+    {
+        // Validate inputs
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'phone' => 'required',
+            'subject' => 'required',
+            'message' => 'nullable|string'
+        ]);
+
+        ContactUs::create($validated);
+
+        // Admin Email
+        $generalSettings = GeneralSettings::first();
+        $adminEmail = $generalSettings->admin_email;
+
+        // Send Email
+        NotificationService::contactUsEnquiry(
+            $adminEmail,
+            $validated['name'],
+            $validated['email'],
+            $validated['phone'],
+            $validated['subject'],
+            $validated['message']
+        );
+
+        return back()->with('success', 'Thank you! Your message has been sent.');
     }
 
 }

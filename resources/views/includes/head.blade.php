@@ -26,7 +26,9 @@
 <link href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
 <link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
+
+<link rel="stylesheet" href="{{ asset('assets/css/sweetalert2.min.css') }}" />
+<link rel="stylesheet" href="{{ asset('assets/css/sweetalert2-animate.min.css') }}" />
+
 <!-- Main CSS File -->
 <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
-
-

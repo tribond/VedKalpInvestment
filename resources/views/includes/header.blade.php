@@ -19,7 +19,7 @@
     <div class="branding d-flex align-items-cente">
 
         <div class="container position-relative d-flex align-items-center justify-content-between">
-            <a href="index.html" class="logo d-flex align-items-center">
+            <a href="{{ route('home') }}" class="logo d-flex align-items-center">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
                 <img src="{{ asset('assets/img/logo.webp') }}" alt="VedKalp Investment">
             </a>
@@ -55,11 +55,15 @@
             <nav id="navmenu" class="navmenu">
                 <ul>
                     <li><a href="{{ route('home') }}" class="active">Home</a></li>
-                    <li><a href="{{ route('about') }}">About</a></li>
-                    <li><a href="{{ route('services') }}">Services</a></li>
-                    <li><a href="{{ route('contact') }}">Contact</a></li>
-                    <li><a href="{{ route('signIn') }}">Login</a></li>
-                    <li><a href="{{ route('signUp') }}">Register</a></li>
+                    <li><a href="{{ route('home') }}#about">About</a></li>
+                    <li><a href="{{ route('home') }}#services">Services</a></li>
+                    <li><a href="{{ route('home') }}#contact">Contact</a></li>
+                    @if (!auth()->check())
+                        <li><a href="{{ route('signIn') }}">Login</a></li>
+                        <li><a href="{{ route('signUp') }}">Register</a></li>
+                    @else
+                        <li><a href="{{ route('user-signout') }}">Logout</a></li>
+                    @endif
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>

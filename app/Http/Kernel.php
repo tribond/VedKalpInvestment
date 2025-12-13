@@ -9,7 +9,6 @@ class Kernel extends HttpKernel
     protected $middlewareGroups = [
         'web' => [
             \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
-            \App\Console\Commands\TradeSocketListener::class,
         ],
     ];
 }

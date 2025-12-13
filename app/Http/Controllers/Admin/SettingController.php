@@ -2,18 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Redirect;
-use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
-use App\Models\State;
-use App\Models\City;
-use App\Models\User;
 use App\Models\Settings;
-use Illuminate\Support\Facades\Hash;
-use Helper;
 
 class SettingController extends Controller
 {

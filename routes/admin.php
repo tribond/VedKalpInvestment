@@ -29,7 +29,5 @@ Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
 
 Route::group(['middleware' => 'auth:admin'], function () {
     Route::get('/dashboard',[DashboardController::class,'dashboard']);
-    Route::get('/notifications',[NotificationController::class,'notifications']);
-    Route::post('/notification/send',[NotificationController::class,'sendNotification']);
     Route::match(['get', 'post'], 'userlist', [UsersController::class, 'userList'])->name('userlist');
 });

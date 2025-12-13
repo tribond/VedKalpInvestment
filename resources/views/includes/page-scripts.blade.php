@@ -11,6 +11,9 @@
 <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
 <script src="{{ asset('assets/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
 <script src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+
+<script src="{{ asset('assets/js/sweetalert2.all.min.js') }}"></script>
+
 <script src="{{ asset('assets/js/form-validate/jquery.validate.min.js') }}"></script>
 <script src="{{ asset('assets/js/form-validate/additional-methods.min.js') }}"></script>
 
@@ -23,3 +26,38 @@
 
 <!-- Active js -->
 <script src="{{ asset('assets/js/active.js') }}"></script>
+
+
+
+@if (session('success'))
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'success',
+                title: `Success`,
+                text: `{{ session('success') }}`,
+                customClass: {
+                    confirmButton: 'btn btn-success'
+                },
+                buttonsStyling: false
+            });
+        });
+    </script>
+    {{ session()->forget('success') }}
+@endif
+
+@if (session('error'))
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: `Error`,
+                text: `{{ session('error') }}`,
+                customClass: {
+                    confirmButton: 'btn btn-danger'
+                },
+                buttonsStyling: false
+            });
+        });
+    </script>
+@endif

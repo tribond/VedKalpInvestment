@@ -39,7 +39,7 @@
                 </div>
             </div>
 
-            <div class="hero-features">
+            {{-- <div class="hero-features">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
@@ -80,14 +80,14 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
 
     </section><!-- /Hero Section -->
 
     <!-- Featured Services Section -->
-    <section id="featured-services" class="featured-services section light-background">
+    {{-- <section id="featured-services" class="featured-services section light-background">
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -153,7 +153,8 @@
 
         </div>
 
-    </section><!-- /Featured Services Section -->
+    </section> --}}
+    <!-- /Featured Services Section -->
 
     <!-- About Section -->
     <section id="about" class="about section">
@@ -228,7 +229,7 @@
     </section><!-- /About Section -->
 
     <!-- Skills Section -->
-    <section id="skills" class="skills section">
+    {{-- <section id="skills" class="skills section">
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -368,7 +369,8 @@
 
         </div>
 
-    </section><!-- /Skills Section -->
+    </section> --}}
+    <!-- /Skills Section -->
 
     <!-- Stats Section -->
     <section id="stats" class="stats section">
@@ -450,10 +452,11 @@
 
         </div>
 
-    </section><!-- /Stats Section -->
+    </section>
+    <!-- /Stats Section -->
 
     <!-- Clients Section -->
-    <section id="clients" class="clients section">
+    {{-- <section id="clients" class="clients section">
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -498,7 +501,8 @@
 
         </div>
 
-    </section><!-- /Clients Section -->
+    </section> --}}
+    <!-- /Clients Section -->
 
     <!-- Services Section -->
     <section id="services" class="services section">
@@ -554,54 +558,12 @@
                         </a>
                     </div>
                 </div>
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="bi bi-phone"></i>
-                        </div>
-                        <h3>Mobile Apps</h3>
-                        <p>Native and cross-platform mobile applications that provide seamless functionality across all devices.</p>
-                        <a href="service-details.html" class="service-link">
-                            <span>Learn More</span>
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="bi bi-shield-check"></i>
-                        </div>
-                        <h3>Cybersecurity</h3>
-                        <p>Comprehensive security solutions to protect your digital assets and maintain customer trust.</p>
-                        <a href="service-details.html" class="service-link">
-                            <span>Learn More</span>
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="bi bi-people"></i>
-                        </div>
-                        <h3>Consulting</h3>
-                        <p>Expert guidance and strategic insights to optimize your business processes and achieve sustainable growth.</p>
-                        <a href="service-details.html" class="service-link">
-                            <span>Learn More</span>
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
             </div>
 
         </div>
 
-    </section><!-- /Services Section -->
+    </section>
+    <!-- /Services Section -->
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section light-background">
@@ -776,10 +738,11 @@
 
         </div>
 
-    </section><!-- /Testimonials Section -->
+    </section>
+    <!-- /Testimonials Section -->
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
+    {{-- <section id="portfolio" class="portfolio section">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
@@ -985,7 +948,8 @@
 
         </div>
 
-    </section><!-- /Portfolio Section -->
+    </section> --}}
+    <!-- /Portfolio Section -->
 
     <!-- Team Section -->
     <section id="team" class="team section">
@@ -1081,7 +1045,7 @@
     </section><!-- /Team Section -->
 
     <!-- Pricing Section -->
-    <section id="pricing" class="pricing section">
+    {{-- <section id="pricing" class="pricing section">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
@@ -1189,7 +1153,8 @@
 
         </div>
 
-    </section><!-- /Pricing Section -->
+    </section> --}}
+    <!-- /Pricing Section -->
 
     <!-- Faq Section -->
     <section id="faq" class="faq section light-background">
@@ -1313,7 +1278,8 @@
                             <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat.</p>
                         </div>
 
-                        <form action="forms/contact.php" method="post" class="php-email-form contact-form">
+                        <form action="{{ route('contact.submit') }}" method="post" class="php-email-form contact-form">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-field">

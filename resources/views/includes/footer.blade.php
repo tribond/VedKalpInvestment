@@ -35,8 +35,8 @@
           <h4>Useful Links</h4>
           <ul>
             <li><i class="bi bi-chevron-right"></i> <a href="{{ route('home') }}">Home</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="{{ route('about') }}">About us</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="{{ route('services') }}">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="{{ route('home') }}#about">About us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="{{ route('home') }}#services">Services</a></li>
             <li><i class="bi bi-chevron-right"></i> <a href="{{ route('terms') }}">Terms of service</a></li>
           </ul>
         </div>
