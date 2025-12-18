@@ -24,10 +24,9 @@
             <span class="sitename">Ved Kalp Investments</span>
           </a>
           <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
+            <p>{{ config('constants.ADMIN_ADDRESS') }}</p>
+            <p class="mt-3"><strong>Phone:</strong> <span><a style="font-size: 14px;font-weight:100;" href="tel:{{ str_replace(' ', '', config('constants.ADMIN_PHONE')) }}">{{ config('constants.ADMIN_PHONE') }}</a></span></p>
+            <p><strong>Email:</strong> <span><a style="font-size: 14px;font-weight:100;" href="mailto:{{ config('constants.ADMIN_EMAIL') }}">{{ config('constants.ADMIN_EMAIL') }}</a></span></p>
           </div>
         </div>
 
@@ -53,7 +52,8 @@
 
         <div class="col-lg-4 col-md-12">
           <h4>Follow Us</h4>
-          <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+          <p>Connect with us on social media to stay updated with our latest news and updates.</p>
+          <p></p>
           <div class="social-links d-flex">
             <a href=""><i class="bi bi-twitter-x"></i></a>
             <a href=""><i class="bi bi-facebook"></i></a>

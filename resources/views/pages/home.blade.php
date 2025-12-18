@@ -8,14 +8,19 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                         <div class="content">
-                            <h1>Transforming Ideas Into Strategic Business Solutions</h1>
-                            <p>We partner with forward-thinking companies to accelerate growth, optimize operations, and unlock their full potential through innovative consulting approaches and data-driven insights.</p>
+                            <h1>Independent Insights. Honest Opinions. Zero Hidden Agendas.</h1>
+                            <p>
+                                This platform exists to share personal perspectives, thoughtful analysis, and learning-driven content — nothing more.
+                                I do not accept paid promotions, sponsored posts, or incentives of any kind.
+                                Every article reflects my independent thinking, written solely to inform, question, and educate — not to influence investments.
+                            </p>
+
                             <div class="cta-group">
                                 <a href="#about" class="btn-primary">Start Your Journey</a>
-                                <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="btn-secondary glightbox">
+                                {{-- <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="btn-secondary glightbox">
                                     <i class="bi bi-play-circle"></i>
                                     <span>Watch Our Story</span>
-                                </a>
+                                </a> --}}
                             </div>
                         </div>
                     </div>
@@ -25,12 +30,12 @@
                             <div class="floating-card" data-aos="fade-up" data-aos-delay="300">
                                 <div class="card-content">
                                     <div class="metric">
-                                        <span class="number">150+</span>
-                                        <span class="label">Successful Projects</span>
+                                        <span class="number">100%</span>
+                                        <span class="label">Independent Content</span>
                                     </div>
                                     <div class="metric">
-                                        <span class="number">98%</span>
-                                        <span class="label">Client Satisfaction</span>
+                                        <span class="number">0</span>
+                                        <span class="label">Paid Promotions</span>
                                     </div>
                                 </div>
                             </div>
@@ -157,7 +162,7 @@
     <!-- /Featured Services Section -->
 
     <!-- About Section -->
-    <section id="about" class="about section">
+    {{-- <section id="about" class="about section">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
@@ -226,7 +231,8 @@
 
         </div>
 
-    </section><!-- /About Section -->
+    </section> --}}
+    <!-- /About Section -->
 
     <!-- Skills Section -->
     {{-- <section id="skills" class="skills section">
@@ -375,16 +381,23 @@
     <!-- Stats Section -->
     <section id="stats" class="stats section">
 
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>About</h2>
+            <p>Find Out More About Us</p>
+        </div>
+        <!-- End Section Title -->
+
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-            <div class="row justify-content-center mb-5">
+            {{-- <div class="row justify-content-center mb-5">
                 <div class="col-lg-8 text-center" data-aos="fade-up" data-aos-delay="200">
                     <h2 class="section-headline mb-4">Measurable Excellence in Every Detail</h2>
                     <p class="section-description">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris viverra veniam sit amet lacus cursus.</p>
                 </div>
-            </div>
+            </div> --}}
 
-            <div class="stats-grid row g-0 justify-content-center">
+            {{-- <div class="stats-grid row g-0 justify-content-center">
                 <div class="col-lg-10">
                     <div class="stats-container">
 
@@ -434,17 +447,56 @@
 
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
-            <div class="row justify-content-center mt-5">
-                <div class="col-lg-6 text-center" data-aos="fade-up" data-aos-delay="500">
+            <div class="row justify-content-center">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="500">
                     <div class="achievement-badge">
                         <div class="badge-icon">
-                            <i class="bi bi-award"></i>
+                            <i class="bi bi-journal-text"></i>
                         </div>
                         <div class="badge-content">
-                            <h4 class="badge-title">Industry Recognition</h4>
-                            <p class="badge-text">Awarded "Excellence in Innovation" for three consecutive years by leading industry organizations.</p>
+                            <h4 class="badge-title">Blog Posts</h4>
+                            <p class="">I do not write blog posts to generate revenue. In other words, no one can pay me to create a post for their product or service. That is just unpleasant and there is enough of that going on in the industry already without having me do it too. Also, the blog posts you read on the site express my personal opinions. My content is my own. I create and produce each piece of content - articles based on what I'm excited about and what I think will be relevant/helpful to my audience at that time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="500">
+                    <div class="achievement-badge">
+                        <div class="badge-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <div class="badge-content">
+                            <h4 class="badge-title">SEBI Registration Status</h4>
+                            <p class="">I am not registered with SEBI in any ways. Just read my content and decide whether you want to trust me or not.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="500">
+                    <div class="achievement-badge">
+                        <div class="badge-icon">
+                            <i class="bi bi-exclamation-circle"></i>
+                        </div>
+                        <div class="badge-content">
+                            <h4 class="badge-title">Disclaimer</h4>
+                            <p class="">I may invest in shares from time to time in my personal capacity, and I will never tell when and where I invest. But if I write on something where I've invested, I'll tell you upfront why you must not invest there.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="500">
+                    <div class="achievement-badge">
+                        <div class="badge-icon">
+                            <i class="bi bi-hand-thumbs-up"></i>
+                        </div>
+                        <div class="badge-content">
+                            <h4 class="badge-title">Thank You</h4>
+                            <p class="">Thank you for taking the time to read and understand my Ethics Statement. This probably doesn't cover every possible scenario under the sun, but it should give you a pretty solid idea of how highly I value the integrity behind what I do and the relationship with you and the rest of my community. <br /><br /> Ultimately, I just want to keep having fun doing what I do, and that fun disappears without these guidelines.</p>
                         </div>
                     </div>
                 </div>
@@ -505,7 +557,7 @@
     <!-- /Clients Section -->
 
     <!-- Services Section -->
-    <section id="services" class="services section">
+    <section id="services" class="services section light-background">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
@@ -515,44 +567,19 @@
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-            <div class="row gy-5">
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="bi bi-laptop"></i>
-                        </div>
-                        <h3>Web Development</h3>
-                        <p>Crafting responsive, modern websites that deliver exceptional user experiences and drive business growth.</p>
-                        <a href="service-details.html" class="service-link">
-                            <span>Learn More</span>
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="bi bi-brush"></i>
-                        </div>
-                        <h3>Brand Design</h3>
-                        <p>Creating compelling visual identities that communicate your brand's essence and resonate with your audience.</p>
-                        <a href="service-details.html" class="service-link">
-                            <span>Learn More</span>
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-item">
-                        <div class="service-icon">
+            <div class="row gy-5 justify-content-center">
+                <div class="col-lg-6 col-md-6 m-0" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-item text-center" style="box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);">
+                        <div class="service-icon mb-3 m-auto">
                             <i class="bi bi-graph-up-arrow"></i>
                         </div>
-                        <h3>Digital Marketing</h3>
-                        <p>Strategic marketing solutions that amplify your reach and convert prospects into loyal customers.</p>
-                        <a href="service-details.html" class="service-link">
+                        <h3>Stock Market</h3>
+                        <p>
+                            Investment and Money Related Content Creation.<br />
+                            Stock Market Advisory Services.<br />
+                            Stock Market Training Programs.
+                        </p>
+                        <a href="{{ auth()->check() ? route('services') : route('signIn') }}" class="service-link">
                             <span>Learn More</span>
                             <i class="bi bi-arrow-right"></i>
                         </a>
@@ -565,7 +592,7 @@
     </section>
     <!-- /Services Section -->
 
-    <!-- Testimonials Section -->
+    {{-- <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section light-background">
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -739,7 +766,7 @@
         </div>
 
     </section>
-    <!-- /Testimonials Section -->
+    <!-- /Testimonials Section --> --}}
 
     <!-- Portfolio Section -->
     {{-- <section id="portfolio" class="portfolio section">
@@ -951,7 +978,7 @@
     </section> --}}
     <!-- /Portfolio Section -->
 
-    <!-- Team Section -->
+    {{-- <!-- Team Section -->
     <section id="team" class="team section">
 
         <!-- Section Title -->
@@ -1042,7 +1069,7 @@
 
         </div>
 
-    </section><!-- /Team Section -->
+    </section><!-- /Team Section --> --}}
 
     <!-- Pricing Section -->
     {{-- <section id="pricing" class="pricing section">
@@ -1156,7 +1183,7 @@
     </section> --}}
     <!-- /Pricing Section -->
 
-    <!-- Faq Section -->
+    {{-- <!-- Faq Section -->
     <section id="faq" class="faq section light-background">
 
         <!-- Section Title -->
@@ -1259,7 +1286,7 @@
 
         </div>
 
-    </section><!-- /Faq Section -->
+    </section><!-- /Faq Section --> --}}
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
@@ -1275,7 +1302,7 @@
                     <div class="contact-form-container">
                         <div class="form-intro">
                             <h2>Let's Start a Conversation</h2>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat.</p>
+                            <p>Fill out the form below and we'll get back to you as soon as possible.</p>
                         </div>
 
                         <form action="{{ route('contact.submit') }}" method="post" class="php-email-form contact-form">
@@ -1335,7 +1362,7 @@
                     <div class="contact-sidebar">
                         <div class="contact-header">
                             <h3>Get in Touch</h3>
-                            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud.</p>
+                            <p></p>
                         </div>
 
                         <div class="contact-methods">
@@ -1345,7 +1372,7 @@
                                 </div>
                                 <div class="contact-details">
                                     <span class="method-label">Address</span>
-                                    <p>892 Park Avenue, Manhattan<br>New York, NY 10075</p>
+                                    <p>{{ config('constants.ADMIN_ADDRESS') }}</p>
                                 </div>
                             </div>
 
@@ -1355,7 +1382,7 @@
                                 </div>
                                 <div class="contact-details">
                                     <span class="method-label">Email</span>
-                                    <p>hello@businessdemo.com</p>
+                                    <p><a href="mailto:{{ config('constants.ADMIN_EMAIL') }}">{{ config('constants.ADMIN_EMAIL') }}</a></p>
                                 </div>
                             </div>
 
@@ -1365,7 +1392,7 @@
                                 </div>
                                 <div class="contact-details">
                                     <span class="method-label">Phone</span>
-                                    <p>+1 (555) 789-2468</p>
+                                    <p><a href="tel:{{ str_replace(' ', '', config('constants.ADMIN_PHONE')) }}">{{ config('constants.ADMIN_PHONE') }}</a></p>
                                 </div>
                             </div>
 
@@ -1375,7 +1402,7 @@
                                 </div>
                                 <div class="contact-details">
                                     <span class="method-label">Hours</span>
-                                    <p>Monday - Friday: 9AM - 6PM<br>Saturday: 10AM - 4PM</p>
+                                    <p>{{ config('constants.ADMIN_HOURS') }}</p>
                                 </div>
                             </div>
                         </div>

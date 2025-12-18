@@ -6,6 +6,7 @@ use App\Helpers\AngeloneApiService;
 use App\Helpers\ApiService;
 use App\Models\ContactUs;
 use App\Models\GeneralSettings;
+use App\Models\PaymentHistory;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
@@ -32,6 +33,15 @@ class HomeController extends Controller
     public function services()
     {
         return view('pages.services');
+    }
+
+    public function paymentHistory()
+    {
+        $payments = PaymentHistory::where('user_id', Auth::id())
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('pages.payment-history', compact('payments'));
     }
 
     public function contact()

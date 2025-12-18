@@ -4,8 +4,8 @@
     <div class="topbar d-flex align-items-center dark-background">
         <div class="container d-flex justify-content-center justify-content-md-between">
             <div class="contact-info d-flex align-items-center">
-                <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">contact@example.com</a></i>
-                <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
+                <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:{{ config('constants.ADMIN_EMAIL') }}">{{ config('constants.ADMIN_EMAIL') }}</a></i>
+                <i class="bi bi-phone d-flex align-items-center ms-4"><a href="tel:{{ str_replace(' ', '', config('constants.ADMIN_PHONE')) }}">{{ config('constants.ADMIN_PHONE') }}</a></i>
             </div>
             <div class="social-links d-none d-md-flex align-items-center">
                 <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
@@ -62,6 +62,7 @@
                         <li><a href="{{ route('signIn') }}">Login</a></li>
                         <li><a href="{{ route('signUp') }}">Register</a></li>
                     @else
+                        <li><a href="{{ route('user-dashboard') }}">Dashboard</a></li>
                         <li><a href="{{ route('user-signout') }}">Logout</a></li>
                     @endif
                 </ul>

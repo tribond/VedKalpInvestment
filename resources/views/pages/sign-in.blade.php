@@ -52,7 +52,7 @@
 @section('script')
     <script>
         var signInUrl = "{{ route('signInSubmit') }}";
-        var dashboardUrl = "{{ route('dashboard') }}";
+        var dashboardUrl = "{{ route('user-dashboard') }}";
     </script>
     <script src="{{ asset('assets/js/sign-in/index.js') }}"></script>
 @endsection

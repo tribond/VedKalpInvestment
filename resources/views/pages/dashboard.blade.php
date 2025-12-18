@@ -1,41 +1,36 @@
 @extends('layouts.default')
 @section('content')
-    <section id="pricing" class="pricing section">
-        <div class="container section-title aos-init aos-animate" data-aos="fade-up">
-            <h2>Services</h2>
-            <p>Check our Services</p>
-        </div>
+    <section id="services" class="services section light-background">
         <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-            <div class="row gy-4">
 
-                <div class="col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-                    <article class="price-card h-100">
-                        <div class="card-head">
-                            <span class="badge-title">Starter</span>
-                            <h3 class="title">Lorem Dolor Sit</h3>
-                            <p class="subtitle">Ut enim ad minim veniam quis nostrud exercitation ullamco laboris.</p>
-                            <div class="price-wrap">
-                                <span class="price price-monthly"><sup>$</sup>12<span class="period">/mo</span></span>
-                                <span class="price price-yearly"><sup>$</sup>120<span class="period">/yr</span></span>
-                            </div>
+            <div class="row gy-5 justify-content-center">
+                <div class="col-lg-6 col-md-6 m-0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-item text-center" style="box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);">
+                        <div class="service-icon mb-3 m-auto">
+                            <i class="bi bi-grid-3x3-gap"></i>
                         </div>
-
-                        <ul class="feature-list list-unstyled mb-4">
-                            <li><i class="bi bi-check-circle"></i> Lorem ipsum dolor amet</li>
-                            <li><i class="bi bi-check-circle"></i> Consectetur adipiscing elit</li>
-                            <li><i class="bi bi-check-circle"></i> Sed do eiusmod tempor</li>
-                            <li class="muted"><i class="bi bi-dash-circle"></i> Incididunt ut labore</li>
-                            <li class="muted"><i class="bi bi-dash-circle"></i> Dolore magna aliqua</li>
-                        </ul>
-
-                        <div class="cta">
-                            <a href="#" class="btn btn-choose w-100">Get Started</a>
+                        <h3>All Services</h3>
+                        <a href="{{ route('services') }}" class="service-link">
+                            <span>View</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 m-0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-item text-center" style="box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);">
+                        <div class="service-icon mb-3 m-auto">
+                            <i class="bi bi-receipt"></i>
                         </div>
-                    </article><!-- End Pricing Item -->
+                        <h3>Payment History</h3>
+                        <a href="{{ route('payment.history') }}" class="service-link">
+                            <span>View</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
 
+        </div>
     </section>
 @stop
 @section('script')
