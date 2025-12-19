@@ -576,7 +576,8 @@
                         <h3>Stock Market</h3>
                         <p>
                             Investment and Money Related Content Creation.<br />
-                            Stock Market Advisory Services.<br />
+                            Equity broking services.<br />
+                            Mutual Fund Distribution & Advisory</br>
                             Stock Market Training Programs.
                         </p>
                         <a href="{{ auth()->check() ? route('services') : route('signIn') }}" class="service-link">

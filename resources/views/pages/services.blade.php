@@ -21,7 +21,8 @@
 
                         <ul class="feature-list list-unstyled mb-4">
                             <li><i class="bi bi-check-circle"></i> Investment and Money Related Content Creation.</li>
-                            <li><i class="bi bi-check-circle"></i> Stock Market Advisory Services.</li>
+                            <li><i class="bi bi-check-circle"></i> Equity broking services.</li>
+                            <li><i class="bi bi-check-circle"></i> Mutual Fund Distribution & Advisory.</li>
                             <li><i class="bi bi-check-circle"></i> Stock Market Training Programs.</li>
                             <li class="muted"><i class="bi bi-dash-circle"></i> More...</li>
                         </ul>
