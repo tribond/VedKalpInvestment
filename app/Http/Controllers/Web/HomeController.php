@@ -7,6 +7,7 @@ use App\Helpers\ApiService;
 use App\Models\ContactUs;
 use App\Models\GeneralSettings;
 use App\Models\PaymentHistory;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
@@ -23,7 +24,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('pages.home');
+        $services = Service::where('is_active', true)->get();
+        return view('pages.home', compact('services'));
     }
     public function about()
     {
@@ -32,7 +34,8 @@ class HomeController extends Controller
 
     public function services()
     {
-        return view('pages.services');
+        $services = Service::where('is_active', true)->get();
+        return view('pages.services', compact('services'));
     }
 
     public function paymentHistory()
@@ -49,9 +52,17 @@ class HomeController extends Controller
         return view('pages.contact');
     }
 
-    public function terms()
+    public function termsConditions()
     {
-        return view('pages.terms');
+        return view('pages.terms-conditions');
+    }
+    public function privacyPolicy()
+    {
+        return view('pages.privacy-policy');
+    }
+    public function refundPolicy()
+    {
+        return view('pages.refund-policy');
     }
 
 

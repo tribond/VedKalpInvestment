@@ -9,27 +9,17 @@ return new class extends Migration {
         Schema::create('payment_histories', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-
-            // Payment details
             $table->string('transaction_id')->unique();
             $table->decimal('amount', 10, 2);
-
-            // Payment status
             $table->enum('payment_status', [
                 'pending',
                 'success',
                 'failed',
                 'refunded'
             ])->default('pending');
-
-            // Payment method & gateway
-            $table->string('payment_method')->nullable(); // card, upi, netbanking
-
-            // Optional references
+            $table->string('payment_method')->nullable();
             $table->string('service_id')->nullable();
             $table->string('receipt_number')->nullable();
-
-            // Timestamps
             $table->timestamp('paid_at')->nullable();
             $table->timestamps();
         });

@@ -8,8 +8,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
-Route::get('/terms', [HomeController::class, 'terms'])->name('terms');
-Route::get('/policy', [HomeController::class, 'terms'])->name('policy');
+Route::get('/terms-conditions', [HomeController::class, 'termsConditions'])->name('terms.conditions');
+Route::get('/privacy-policy', [HomeController::class, 'privacyPolicy'])->name('privacy.policy');
+Route::get('/refund-policy', [HomeController::class, 'refundPolicy'])->name('refund.policy');
 
 Route::get('/sign-up', [HomeController::class, 'signUp'])->name('signUp');
 Route::post('/sign-up-submit', [HomeController::class, 'signUpSubmit'])->name('signUpSubmit');

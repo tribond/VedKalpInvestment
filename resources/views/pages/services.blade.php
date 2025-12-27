@@ -7,31 +7,30 @@
         </div>
         <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
             <div class="row gy-4 justify-content-center">
-
-                <div class="col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-                    <article class="price-card h-100">
-                        <div class="card-head">
-                            <span class="badge-title">Starter</span>
-                            <h3 class="title">Stock Market</h3>
-                            <div class="price-wrap">
-                                <span class="price price-monthly"><sup>₹</sup>12<span class="period">/mo</span></span>
-                                <span class="price price-yearly"><sup>₹</sup>120<span class="period">/yr</span></span>
+                @foreach ($services as $service)
+                    <div class="col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                        <article class="price-card h-100">
+                            <div class="card-head">
+                                <span class="badge-title">{{ $service->subscription_type }}</span>
+                                <h3 class="title">{{ $service->title }}</h3>
+                                <div class="price-wrap">
+                                    <span class="price price-monthly">
+                                        <sup>₹</sup>{{ $service->subscription_amount }}
+                                        @if ($service->subscription_duration == 'monthly')
+                                            <span class="period">/mo</span>
+                                        @elseif($service->subscription_duration == 'yearly')
+                                            <span class="period">/yr</span>
+                                        @endif
+                                    </span>
+                                </div>
                             </div>
-                        </div>
-
-                        <ul class="feature-list list-unstyled mb-4">
-                            <li><i class="bi bi-check-circle"></i> Investment and Money Related Content Creation.</li>
-                            <li><i class="bi bi-check-circle"></i> Equity broking services.</li>
-                            <li><i class="bi bi-check-circle"></i> Mutual Fund Distribution & Advisory.</li>
-                            <li><i class="bi bi-check-circle"></i> Stock Market Training Programs.</li>
-                            <li class="muted"><i class="bi bi-dash-circle"></i> More...</li>
-                        </ul>
-
-                        <div class="cta">
-                            <a href="#" class="btn btn-choose w-100">Purchase Now</a>
-                        </div>
-                    </article><!-- End Pricing Item -->
-                </div>
+                            {!! $service->description !!}
+                            <div class="cta">
+                                <a href="#" class="btn btn-choose w-100">Subscribe Now</a>
+                            </div>
+                        </article>
+                    </div>
+                @endforeach
             </div>
         </div>
 

@@ -21,7 +21,7 @@
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
           <a href="index.html" class="d-flex align-items-center">
-            <span class="sitename">Ved Kalp Investments</span>
+            <span class="sitename">{{ config('constants.SITE_NAME') }}</span>
           </a>
           <div class="footer-contact pt-3">
             <p>{{ config('constants.ADMIN_ADDRESS') }}</p>
@@ -34,9 +34,9 @@
           <h4>Useful Links</h4>
           <ul>
             <li><i class="bi bi-chevron-right"></i> <a href="{{ route('home') }}">Home</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="{{ route('home') }}#about">About us</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="{{ route('home') }}#services">Services</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="{{ route('terms') }}">Terms of service</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="{{ route('terms.conditions') }}">Terms & Conditions</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="{{ route('privacy.policy') }}">Privacy Policy</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="{{ route('refund.policy') }}">Refund Policy</a></li>
           </ul>
         </div>
 
@@ -66,7 +66,7 @@
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">VedKalpInvestment</strong> <span>All Rights Reserved</span></p>
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">{{ config('constants.SITE_NAME') }}</strong> <span>All Rights Reserved</span></p>
     </div>
 
   </footer>

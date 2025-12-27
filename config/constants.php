@@ -2,6 +2,7 @@
 
 return [
     // Define your constants here
+    'SITE_NAME' => 'Ved Kalp Investments',
     'DEFAULT_USER_ROLE' => 'individual',
     'ADMIN_EMAIL' => 'vedkalpinvestments@gmail.com',
     'ADMIN_PHONE' => '+91 940 907 4374',

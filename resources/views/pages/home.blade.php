@@ -568,24 +568,25 @@
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
             <div class="row gy-5 justify-content-center">
-                <div class="col-lg-6 col-md-6 m-0" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-item text-center" style="box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);">
-                        <div class="service-icon mb-3 m-auto">
-                            <i class="bi bi-graph-up-arrow"></i>
+                @foreach ($services as $service)
+                    <div class="col-lg-4 col-md-4 m-0" data-aos="fade-up" data-aos-delay="300">
+                        <div class="service-item text-center" style="box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);">
+                            
+                            <div class="service-icon mb-3 m-auto">
+                                <i class="bi bi-graph-up-arrow"></i>
+                            </div>
+                            <h3>{{ $service->title }}</h3>
+                            <span class="badge fs-6 text-bg-dark">{{ $service->subscription_type }}</span>
+                            <div class="home-service">
+                                {!! $service->description !!}
+                            </div>
+                            <a href="{{ auth()->check() ? route('services') : route('signIn') }}" class="service-link">
+                                <span>Know More</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
                         </div>
-                        <h3>Stock Market</h3>
-                        <p>
-                            Investment and Money Related Content Creation.<br />
-                            Equity broking services.<br />
-                            Mutual Fund Distribution & Advisory</br>
-                            Stock Market Training Programs.
-                        </p>
-                        <a href="{{ auth()->check() ? route('services') : route('signIn') }}" class="service-link">
-                            <span>Learn More</span>
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
                     </div>
-                </div>
+                @endforeach
             </div>
 
         </div>
@@ -1403,7 +1404,7 @@
                                 </div>
                                 <div class="contact-details">
                                     <span class="method-label">Hours</span>
-                                    <p>{{ config('constants.ADMIN_HOURS') }}</p>
+                                    <p>{!! config('constants.ADMIN_HOURS') !!}</p>
                                 </div>
                             </div>
                         </div>
