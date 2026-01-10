@@ -14,5 +14,16 @@ return Application::configure(basePath: dirname(__DIR__))
         //
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        //
+        $exceptions->render(function (\Throwable $e, $request) {
+            if ($e instanceof \Illuminate\Auth\AuthenticationException) {
+                $guards = $e->guards();
+                if (in_array('admin', $guards)) {
+                    return redirect('/admin/login');
+                } elseif (auth('admin')->check()) {
+                    return redirect('/admin/dashboard');
+                } else {
+                    return redirect('/sign-in');
+                }
+            }
+        });
     })->create();
