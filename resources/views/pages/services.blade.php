@@ -26,7 +26,11 @@
                             </div>
                             {!! $service->description !!}
                             <div class="cta">
-                                <a href="#" class="btn btn-choose w-100">Subscribe Now</a>
+                                <a href="#" class="btn btn-choose w-100 subscribe-btn" data-title="{{ $service->title . '(' . $service->subscription_type . ')' }}" data-amount="{{ $service->subscription_amount }}" data-duration="{{ ucfirst($service->subscription_duration) }}">Subscribe Now</a>
+                                <small class="text-warning d-block mt-2">
+                                    Payments are processed via <strong>Paytm AutoPay</strong>.<br />
+                                    Gateway activation is pending approval.
+                                </small>
                             </div>
                         </article>
                     </div>
@@ -37,4 +41,64 @@
     </section>
 @stop
 @section('script')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            document.querySelectorAll('.subscribe-btn').forEach(button => {
+                button.addEventListener('click', function() {
+
+                    let title = this.dataset.title;
+                    let amount = this.dataset.amount;
+                    let duration = this.dataset.duration;
+
+                    Swal.fire({
+                        title: 'Confirm Subscription',
+                        html: `
+                            <h6 class="text-bg-warning p-3">Payment gateway integration in progress. AutoPay will be enabled after verification.</h6>
+                            <p><strong>Service:</strong> ${title}</p>
+                            <p><strong>Plan:</strong> ${duration}</p>
+                            <p class="mt-2">
+                                <strong>Final Amount:</strong>
+                                <span style="font-size:18px;">₹${amount}</span>
+                            </p>
+                            <button id="paytmPayBtn" class="btn btn-primary w-100 mt-3">
+                                Pay with 
+                                <img src="{{ asset('assets/img/paytm-logo.png') }}" alt="Paytm" style="height:24px;background:#fff;padding:3px;border-radius:4px;">
+                            </button>
+                        `,
+                        showConfirmButton: false,
+                        showCloseButton: true
+                    });
+
+                    // Handle Paytm button click
+                    document.addEventListener('click', function handler(e) {
+                        if (e.target && e.target.id === 'paytmPayBtn') {
+                            document.removeEventListener('click', handler);
+
+                            Swal.fire({
+                                title: 'Redirecting to Paytm',
+                                html: 'Please wait while we process your payment...',
+                                allowOutsideClick: false,
+                                didOpen: () => {
+                                    Swal.showLoading();
+                                }
+                            });
+
+                            // Simulate payment success (for Paytm approval phase)
+                            setTimeout(() => {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Payment Successful',
+                                    text: 'Your subscription has been activated successfully.',
+                                    confirmButtonText: 'OK'
+                                });
+                            }, 2000);
+                        }
+                    });
+
+                });
+            });
+
+        });
+    </script>
 @endsection
