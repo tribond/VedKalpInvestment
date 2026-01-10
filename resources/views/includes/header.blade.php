@@ -62,6 +62,7 @@
                         <li><a href="{{ route('signIn') }}">Login</a></li>
                         <li><a href="{{ route('signUp') }}">Register</a></li>
                     @else
+                        <li><a href="{{ route('cart.view') }}">Cart<span class="badge bg-primary cart-count ms-1" style="display: {{ count(session('cart', [])) > 0 ? 'inline' : 'none' }}">{{ count(session('cart', [])) }}</span></a></li>
                         <li><a href="{{ route('user-dashboard') }}">Dashboard</a></li>
                         <li><a href="{{ route('user-signout') }}">Logout</a></li>
                     @endif

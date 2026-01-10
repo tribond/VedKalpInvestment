@@ -19,7 +19,8 @@ class PaymentHistory extends Authenticatable
         'payment_method',
         'service_id',
         'receipt_number',
-        'paid_at'
+        'paid_at',
+        'gateway_response',
     ];
 
      protected $casts = [
