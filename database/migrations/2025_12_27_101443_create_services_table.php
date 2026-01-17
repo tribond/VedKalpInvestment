@@ -10,6 +10,7 @@ return new class extends Migration {
             $table->id(); 
             $table->string('title', 100);
             $table->string('subscription_type', 100);
+            $table->text('short_description')->nullable();
             $table->text('description')->nullable();
             $table->decimal('subscription_amount', 10, 2);
             $table->enum('subscription_duration', ['monthly', 'yearly']);

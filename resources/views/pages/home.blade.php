@@ -578,7 +578,7 @@
                             <h3>{{ $service->title }}</h3>
                             <span class="badge fs-6 text-bg-dark">{{ $service->subscription_type }}</span>
                             <div class="home-service">
-                                {!! $service->description !!}
+                                {!! $service->short_description !!}
                             </div>
                             <a href="{{ auth()->check() ? route('services') : route('signIn') }}" class="service-link">
                                 <span>Know More</span>
